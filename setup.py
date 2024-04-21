@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='notfunny',
-      version='0.6.6',
+      version='0.6.12',
       description='Only the worst',
       long_description='Really, the worst jokes around. Actually just the one worst. This is really just a test project for packaging python projects. But as an added bonus it really isnt funny.',
       classifiers=[
@@ -17,8 +17,11 @@ setup(name='notfunny',
       license='MIT',
       packages=['notfunny'],
       scripts=['bin/notfunny-joke'],
+      entry_points = {
+        'console_scripts': ['funniest-joke=funniest.command_line:main'],
+      },
       install_requires=[
-            'unittest'
+            # 'unittest'
       ],
       test_suite='nose.collector',
       tests_require=['nose'],

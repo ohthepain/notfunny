@@ -1,0 +1,5 @@
+#!python
+
+import notfunny
+print(notfunny.joke())
+
