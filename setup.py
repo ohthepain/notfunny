@@ -18,9 +18,9 @@ setup(name='notfunny',
       license='MIT',
       packages=['notfunny'],
       scripts=['bin/notfunny-joke'],
-      # entry_points = {
-      #   'console_scripts': ['funniest-joke=funniest.command_line:main'],
-      # },
+      entry_points = {
+        'console_scripts': ['funniest-joke=funniest.command_line:main'],
+      },
       install_requires=[
             # 'unittest'
       ],
