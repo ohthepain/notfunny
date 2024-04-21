@@ -29,12 +29,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build setuptools twine
+        pip install build setuptools 
+        #twine
     - name: Build package
       run: python setup.py sdist
     # - name: Publish package
     #   run: twine upload dist/*
     - name: Publish package to TestPyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository-url: https://test.pypi.org/legacy/
+    - name: Publish package to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1.8
       with:
         password: ${{ secrets.PYPI_API_TOKEN }}
